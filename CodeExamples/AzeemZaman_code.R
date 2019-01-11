@@ -51,7 +51,7 @@ anglePlot <- function(perp.angle, mu1, mu2, Sigma, opt.slope){
   mu1.rot <- rot.mat%*%mu1
   mu2.rot <- rot.mat%*%mu2
   # now get the rotated covariance matrix
-  cov.rot <- t(rot.mat)%*%Sigma%*%rot.mat
+  cov.rot <- rot.mat%*%Sigma%*%t(rot.mat)
   # get the marginal distributions
   mu1.marg <- mu1.rot[1,]
   mu2.marg <- mu2.rot[1,]
